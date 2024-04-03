@@ -8,6 +8,7 @@ public class Enemies_spawner : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject enemyFalling;
+    public GameObject Pause;
     public int score = 0;
     public float spawnInterval = 1.0f;
     public bool isPlayerAlive = true;
@@ -25,11 +26,14 @@ public class Enemies_spawner : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             isPaused = true;
-            SceneManager.LoadScene("Pause", LoadSceneMode.Additive);
-            spaceship_Movement.speed = 0f;
+            Pause.SetActive(true);
         }
     }
-
+    private void Resume()
+    {
+        isPaused = false;
+        Pause.SetActive(false);
+    }
     private IEnumerator SpawnFallingObject()
     {
         while (isPlayerAlive == true && isPaused == false)

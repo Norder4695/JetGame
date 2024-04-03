@@ -3,7 +3,11 @@ guid: 7e9d8251c91350c4695892e4e8d74787
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - enemyFalling: {instanceID: 0}
+  - Pause: {instanceID: 0}
+  - score_Timer: {instanceID: 0}
+  - spaceship_Movement: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

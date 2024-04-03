@@ -7,6 +7,7 @@ public class Play_game : MonoBehaviour
 {
     public Score_timer score_Timer;
     public Enemies_spawner enemies_Spawner;
+    public GameObject Pause;
     public int scoreSave = 0;
    public void PlayGame()
     {
@@ -22,7 +23,8 @@ public class Play_game : MonoBehaviour
 
     public void Resume()
     {
-        SceneManager.UnloadSceneAsync("Pause");
+        Pause.SetActive(false);
+        enemies_Spawner.isPaused = false;
     }
 
 }
