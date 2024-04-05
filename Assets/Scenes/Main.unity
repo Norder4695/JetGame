@@ -375,7 +375,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 227369199}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1952008466}
+        m_TargetAssemblyTypeName: Play_game, Assembly-CSharp
+        m_MethodName: QuitLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &227369199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -967,7 +979,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1082767817}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1952008466}
+        m_TargetAssemblyTypeName: Play_game, Assembly-CSharp
+        m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1082767817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1887,6 +1911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score_Timer: {fileID: 529357213}
   enemies_Spawner: {fileID: 1611264385}
+  spaceship_Movement: {fileID: 1199040959}
   Pause: {fileID: 1952008463}
   scoreSave: 0
 --- !u!1660057539 &9223372036854775807

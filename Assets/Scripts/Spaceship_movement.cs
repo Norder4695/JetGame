@@ -39,11 +39,6 @@ public class Spaceship_movement : MonoBehaviour
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
             bullet.GetComponent<Rigidbody2D>().velocity = Vector3.up * bulletSpeed;
         }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            speed = 0f;
-        }
        
 
     }

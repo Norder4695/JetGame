@@ -7,6 +7,7 @@ public class Play_game : MonoBehaviour
 {
     public Score_timer score_Timer;
     public Enemies_spawner enemies_Spawner;
+    public Spaceship_movement spaceship_Movement;
     public GameObject Pause;
     public int scoreSave = 0;
    public void PlayGame()
@@ -25,6 +26,7 @@ public class Play_game : MonoBehaviour
     {
         Pause.SetActive(false);
         enemies_Spawner.isPaused = false;
+        spaceship_Movement.speed = 5.0f;
     }
 
 }

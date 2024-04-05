@@ -29,11 +29,6 @@ public class Enemies_spawner : MonoBehaviour
             Pause.SetActive(true);
         }
     }
-    private void Resume()
-    {
-        isPaused = false;
-        Pause.SetActive(false);
-    }
     private IEnumerator SpawnFallingObject()
     {
         while (isPlayerAlive == true && isPaused == false)
