@@ -1537,7 +1537,7 @@ MonoBehaviour:
   spawnInterval: 1
   isPlayerAlive: 1
   score_Timer: {fileID: 529357213}
-  spaceship_Movement: {fileID: 0}
+  spaceship_Movement: {fileID: 1199040959}
   isPaused: 0
 --- !u!61 &1611264386
 BoxCollider2D:

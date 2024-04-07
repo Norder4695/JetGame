@@ -18,7 +18,10 @@ public class Enemies_spawner : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(SpawnFallingObject());
+        //StartCoroutine(SpawnFallingObject());
+        Vector3 spawnPosition = new Vector3(Random.Range(-2.5f, 2.5f), 5.32f, 0);
+        GameObject enemyInstance = Instantiate(enemyFalling, spawnPosition, Quaternion.identity);
+        Rigidbody2D rb = enemyInstance.GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -27,28 +30,18 @@ public class Enemies_spawner : MonoBehaviour
         {
             isPaused = true;
             Pause.SetActive(true);
+            spaceship_Movement.speed = 0f;
         }
     }
-    private IEnumerator SpawnFallingObject()
+   /* private IEnumerator SpawnFallingObject()
     {
-        while (isPlayerAlive == true && isPaused == false)
+        while (isPlayerAlive == true)
         {
             // Instantiate the object at a random position at the top of the screen
             Vector3 spawnPosition = new Vector3(Random.Range(-2.5f, 2.5f), 5.32f, 0);
             GameObject enemyInstance = Instantiate(enemyFalling, spawnPosition, Quaternion.identity);
             Rigidbody2D rb = enemyInstance.GetComponent<Rigidbody2D>();
 
-            // Changing the interval and speed of the Enemies
-            if (Score_timer.count > 200 && Score_timer.count < 400)
-            {
-
-                spawnInterval = 0.7f;
-                rb.gravityScale = 1.0f;
-            } else if(Score_timer.count > 400 && Score_timer.count < 600)
-            {
-                spawnInterval = 0.5f;
-                rb.gravityScale = 2.0f;
-            }
             // Wait for the next spawn
             yield return new WaitForSeconds(spawnInterval);
 
@@ -56,6 +49,7 @@ public class Enemies_spawner : MonoBehaviour
             if (isPlayerAlive == false || isPaused == true)
             {
                 Rigidbody2D rbFreeze = enemyInstance.GetComponent<Rigidbody2D>();
+                spawnInterval = 10f;
                 if (rb != null)
                 {
                     rbFreeze.constraints = RigidbodyConstraints2D.FreezeAll;
@@ -63,7 +57,7 @@ public class Enemies_spawner : MonoBehaviour
             }
         }
     }
-
+   */
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Destroy the object when it hits the bottom of the screen

@@ -26,7 +26,9 @@ public class Play_game : MonoBehaviour
     {
         Pause.SetActive(false);
         enemies_Spawner.isPaused = false;
+        Debug.Log(enemies_Spawner.isPaused);
         spaceship_Movement.speed = 5.0f;
+        enemies_Spawner.spawnInterval = 1.0f;
     }
 
 }
