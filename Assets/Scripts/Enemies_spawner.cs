@@ -18,10 +18,7 @@ public class Enemies_spawner : MonoBehaviour
 
     void Start()
     {
-        //StartCoroutine(SpawnFallingObject());
-        Vector3 spawnPosition = new Vector3(Random.Range(-2.5f, 2.5f), 5.32f, 0);
-        GameObject enemyInstance = Instantiate(enemyFalling, spawnPosition, Quaternion.identity);
-        Rigidbody2D rb = enemyInstance.GetComponent<Rigidbody2D>();
+        StartCoroutine(SpawnFallingObject());
     }
 
     private void Update()
@@ -33,14 +30,15 @@ public class Enemies_spawner : MonoBehaviour
             spaceship_Movement.speed = 0f;
         }
     }
-   /* private IEnumerator SpawnFallingObject()
+
+
+    private IEnumerator SpawnFallingObject()
     {
         while (isPlayerAlive == true)
         {
             // Instantiate the object at a random position at the top of the screen
             Vector3 spawnPosition = new Vector3(Random.Range(-2.5f, 2.5f), 5.32f, 0);
             GameObject enemyInstance = Instantiate(enemyFalling, spawnPosition, Quaternion.identity);
-            Rigidbody2D rb = enemyInstance.GetComponent<Rigidbody2D>();
 
             // Wait for the next spawn
             yield return new WaitForSeconds(spawnInterval);
@@ -50,14 +48,14 @@ public class Enemies_spawner : MonoBehaviour
             {
                 Rigidbody2D rbFreeze = enemyInstance.GetComponent<Rigidbody2D>();
                 spawnInterval = 10f;
-                if (rb != null)
+                /*if (rb != null)
                 {
                     rbFreeze.constraints = RigidbodyConstraints2D.FreezeAll;
                 }
+                */
             }
         }
     }
-   */
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Destroy the object when it hits the bottom of the screen
