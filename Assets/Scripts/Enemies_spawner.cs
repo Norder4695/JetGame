@@ -37,7 +37,7 @@ public class Enemies_spawner : MonoBehaviour
         while (isPlayerAlive == true)
         {
             // Instantiate the object at a random position at the top of the screen
-            Vector3 spawnPosition = new Vector3(-2.5f, 5f, 0);
+            Vector3 spawnPosition = new Vector3(Random.Range(-2.5f, 2.5f), 5f, 0);
             GameObject enemyInstance = Instantiate(enemyFalling, spawnPosition, Quaternion.identity);
 
             // Wait for the next spawn
