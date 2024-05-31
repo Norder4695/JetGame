@@ -18,7 +18,7 @@ public class Enemies_spawner : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(SpawnFallingObject());
+        StartCoroutine(SpawnEnemies(5));
     }
 
     private void Update()
@@ -27,33 +27,18 @@ public class Enemies_spawner : MonoBehaviour
         {
             isPaused = true;
             Pause.SetActive(true);
-            spaceship_Movement.speed = 0f;
+            Time.timeScale = 0;
         }
     }
 
-
-    private IEnumerator SpawnFallingObject()
+    private IEnumerator SpawnEnemies(int numberofEnemies)
     {
-        while (isPlayerAlive == true)
+        for (int i = 0; i < numberofEnemies; i++)
         {
-            // Instantiate the object at a random position at the top of the screen
             Vector3 spawnPosition = new Vector3(Random.Range(-2.5f, 2.5f), 5f, 0);
-            GameObject enemyInstance = Instantiate(enemyFalling, spawnPosition, Quaternion.identity);
-
-            // Wait for the next spawn
+            Instantiate(enemyFalling, spawnPosition, Quaternion.identity);
             yield return new WaitForSeconds(spawnInterval);
 
-            // Stop everyone after the end of the game
-            if (isPlayerAlive == false || isPaused == true)
-            {
-                Rigidbody2D rbFreeze = enemyInstance.GetComponent<Rigidbody2D>();
-                spawnInterval = 10f;
-                /*if (rb != null)
-                {
-                    rbFreeze.constraints = RigidbodyConstraints2D.FreezeAll;
-                }
-                */
-            }
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
