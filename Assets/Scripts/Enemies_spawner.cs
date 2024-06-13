@@ -35,7 +35,7 @@ public class Enemies_spawner : MonoBehaviour
     {
         for (int i = 0; i < numberofEnemies; i++)
         {
-            Vector3 spawnPosition = new Vector3(Random.Range(-2.5f, 2.5f), 5f, 0);
+            Vector3 spawnPosition = new Vector3(0, 5f, 0);
             Instantiate(enemyFalling, spawnPosition, Quaternion.identity);
             yield return new WaitForSeconds(spawnInterval);
 

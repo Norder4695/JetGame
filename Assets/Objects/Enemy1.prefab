@@ -184,8 +184,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa87c4ad6b7283143a702d9664a69188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  origin: {x: -2.5, y: 5, z: 0}
-  destination1: {x: 2.5, y: 0, z: 0}
-  movementTime: 5
-  frequency: 1
-  amplitude: 1
+  parameters: {fileID: 11400000, guid: 843453d1ba563b04f936e3491b93b744, type: 2}
+  initialX: 0
+  time: 0
