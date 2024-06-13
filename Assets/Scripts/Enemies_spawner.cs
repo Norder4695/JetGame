@@ -18,7 +18,7 @@ public class Enemies_spawner : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(SpawnEnemies(5));
+        StartCoroutine(SpawnEnemies(1));
     }
 
     private void Update()
